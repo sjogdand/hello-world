@@ -4,11 +4,11 @@
     <p>Please fill in this form to create an account.</p>
     <hr>
      
-    <label for="Full Name"><b>Enter Name Full Name</b></label>
+    <label for="Full Name"><b>Enter Name</b></label>
     <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
     <br>
 
-    <label for="Full Name"><b>Enter Name Full Name</b></label>
+    <label for="Surname"><b>Enter Surname</b></label>
     <input type="text" placeholder="Enter Full Name" name="Name" id="Name" required>
     <br>
     
