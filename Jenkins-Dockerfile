@@ -8,7 +8,7 @@ pipeline{
     stages{
         stage("Build Docker Image"){
             steps{
-                sh "docker image . -t jogdand/demoapp:v1"
+                sh "docker build . -t jogdand/demoapp:v1"
             }
             
         }
