@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+    environment{
+        PATH = "/opt/maven/bin:$PATH"
+    }
+    stages{
+        stage("Git checkout"){
+            steps{
+                git 'https://github.com/sjogdand/hello-world.git'
+            }
+        }
+        stage("Build Maven"){
+            steps{
+                sh "mvn clean package"
+            }
+            
+        }
+        stage("Maven Artifacts"){
+            steps{
+                sh "mvn install"
+            }
+        }
+        stage("Test Code"){
+            steps{
+                sh "mvn test"
+            }
+            
+        }
+        
+    
+        
+    }
+}
