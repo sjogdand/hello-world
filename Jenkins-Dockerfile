@@ -1,0 +1,22 @@
+currentBuild.displayName = "create-dockerImage-#"+currentBuild.number
+pipeline{
+    agent any
+    environment{
+        DOCKERTAG = getDockerTag()
+        
+    }
+    stages{
+        stage("Build Docker Image"){
+            steps{
+                sh "docker image . -t jogdand/demoapp:v1"
+            }
+            
+        }
+    }
+}
+
+
+def getDockerTag(){
+    def tag = sh script:'git rev-parse HEAD', retirnStdout: true
+    return tag
+}
